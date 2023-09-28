@@ -10,6 +10,7 @@ target_env = env_file.read()
 
 user_file = open("temp_user.txt")
 target_user = user_file.read()
+print('here')
 print(target_user)
 
 def reset_password(target_env, target_user):
