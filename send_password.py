@@ -5,6 +5,7 @@ import os
 
 env_file = open("temp_env.txt")
 target_env = env_file.read()
+print(target_env)
 
 def main(target_env):
 	ssm_file = open("ssm_send_reset.json")
