@@ -44,16 +44,4 @@ def reset_password(target_env, target_user):
 	return pwd
 
 
-
-			# ssm_client = boto3.client('ssm', aws_access_key_id=keys_json[target_env]['key'], aws_secret_access_key=keys_json[target_env]['secret'])
-
-			# ssm_response = ssm_client.send_command(
-			# 	    InstanceIds = ["i-0e0ef4b5f42929f4e"],
-			# 	    DocumentName='IAMUserCreationAutomation-SendResetData',
-			# 	    DocumentVersion="$DEFAULT",
-			# 	    TimeoutSeconds=120,
-			# 	    Parameters={'Environment':[target_env], 'Password':[pwd], 'Email':[target_email]}
-			# 	) 
-
-
 print(reset_password(target_env, target_user))
