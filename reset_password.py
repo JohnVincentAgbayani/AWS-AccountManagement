@@ -7,8 +7,9 @@ from passgen import generate_password
 
 env_file = open("temp_env.txt")
 target_env = env_file.read()
-target_user = os.environ["Username"]
 
+user_file = open("temp_user.txt")
+target_user = user_file.read()
 
 def reset_password(target_env, target_user):
 
