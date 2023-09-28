@@ -5,18 +5,14 @@ import os
 
 from passgen import generate_password
 
-print("1213123123123213")
 env_file = open("temp_env.txt")
 target_env = env_file.read()
 
 user_file = open("temp_user.txt")
 target_user = user_file.read()
-print('here')
-print(target_user)
 
 def reset_password(target_env, target_user):
 
-	print('here2')
 	target_user = target_user.strip()
 	print(target_user)
 	
