@@ -3,7 +3,8 @@ import json
 import time
 import os
 
-target_env = os.environ["AWS Environment"]
+env_file = open("temp_env.txt")
+target_env = env_file.read()
 
 def main(target_env):
 	ssm_file = open("ssm_send_reset.json")
