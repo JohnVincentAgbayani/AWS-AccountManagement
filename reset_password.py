@@ -1,11 +1,14 @@
 import base64
 import boto3
+import json
 import os
 
 from passgen import generate_password
 
-target_env = os.environ["AWS Environment"]
+env_file = open("temp_env.txt")
+target_env = env_file.read()
 target_user = os.environ["Username"]
+
 
 def reset_password(target_env, target_user):
 
@@ -13,8 +16,7 @@ def reset_password(target_env, target_user):
 
 	iam_client = boto3.client('iam')
 	response = ""
-
-	#PREPROCESSING
+	
 	try:
 		response = iam_client.get_user(UserName=target_user)
 	except Exception as e:
