@@ -5,6 +5,7 @@ import os
 
 from passgen import generate_password
 
+print("1213123123123213")
 env_file = open("temp_env.txt")
 target_env = env_file.read()
 
