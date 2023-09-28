@@ -16,8 +16,10 @@ print(target_user)
 
 def reset_password(target_env, target_user):
 
+	print('here2')
 	target_user = target_user.strip()
-
+	print(target_user)
+	
 	iam_client = boto3.client('iam')
 	response = ""
 	
