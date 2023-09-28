@@ -3,8 +3,7 @@ import json
 import time
 import os
 
-target_env = "deltekdev"
-email = "johnvincentagbayani@deltek.com"
+target_env = os.environ["AWS Environment"]
 
 def main(target_env, email):
 	ssm_file = open("ssm_send_reset.json")
