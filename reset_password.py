@@ -4,8 +4,8 @@ import os
 
 from passgen import generate_password
 
-target_env = "deltekdev"
-target_user = "test_reset_user"
+target_env = os.environ["AWS Environment"]
+target_user = os.environ["Username"]
 
 def reset_password(target_env, target_user):
 
