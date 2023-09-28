@@ -11,7 +11,7 @@ def main(target_env):
 
 	pwd_file = open("temp_password.txt")
 	pwd = pwd_file.read()
-	pwd = pwd_split(",")
+	pwd = pwd.split(",")
 	pwd = pwd[0][1:]
 	email = pwd[:-2]
 
