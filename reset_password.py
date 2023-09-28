@@ -56,4 +56,4 @@ def reset_password(target_env, target_user):
 			# 	) 
 
 
-reset_password(target_env, target_user)
+print(reset_password(target_env, target_user))
