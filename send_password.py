@@ -11,9 +11,9 @@ def main(target_env):
 
 	pwd_file = open("temp_password.txt")
 	pwd = pwd_file.read()
-	print(type(pwd))
-	pwd = pwd[0]
-	email = pwd[1]
+	pwd = pwd_split(",")
+	pwd = pwd[0][1:]
+	email = pwd[:-2]
 
 	emailer_instance = "i-0e0ef4b5f42929f4e"
 
