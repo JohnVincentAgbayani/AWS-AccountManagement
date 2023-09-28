@@ -5,12 +5,15 @@ import os
 
 target_env = os.environ["AWS Environment"]
 
-def main(target_env, email):
+def main(target_env):
 	ssm_file = open("ssm_send_reset.json")
 	ssm_json = ssm_file.read()
 
 	pwd_file = open("temp_password.txt")
 	pwd = pwd_file.read()
+	pwd_split = pwd.split(",")
+	pwd = pwd_split[0]
+	email = pwd_split[1]
 
 	emailer_instance = "i-0e0ef4b5f42929f4e"
 
