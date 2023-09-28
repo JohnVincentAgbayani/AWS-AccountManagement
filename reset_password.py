@@ -41,7 +41,7 @@ def reset_password(target_env, target_user):
 				pwd_bytes = pwd.encode(enc)
 				pwd = base64.b64encode(pwd_bytes)
 				pwd = pwd.decode(enc)
-	return pwd
+	return pwd, target_email
 
 
 print(reset_password(target_env, target_user))
