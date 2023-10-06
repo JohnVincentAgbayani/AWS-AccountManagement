@@ -73,6 +73,7 @@ smtp.sendmail(sender, recipient, email.as_string())
 #pwd sending
 pwd_subject = f'pwrd - {target_environment} AWS'
 pwd_message = user_pwd
+print(pwd_message)
 
 email["Subject"] = pwd_subject
 
