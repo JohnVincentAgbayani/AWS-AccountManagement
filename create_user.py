@@ -65,7 +65,7 @@ email["Subject"] = welcome_subject
 email.set_content(welcome_message, subtype="html")
 
 sender = sender_email
-recipient = "johnvincentagbayani@deltek.com"
+recipient = user_email
 
 smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
 smtp.sendmail(sender, recipient, email.as_string())
@@ -73,11 +73,16 @@ smtp.sendmail(sender, recipient, email.as_string())
 #pwd sending
 pwd_subject = f'pwrd - {target_environment} AWS'
 pwd_message = user_pwd
-print(pwd_message)
 
+email = EmailMessage()
+email["From"] = sender_email
+email["To"] = user_email
 email["Subject"] = pwd_subject
 
 email.set_content(pwd_message, subtype="html")
+
+sender = sender_email
+recipient = user_email
 
 smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
 smtp.sendmail(sender, recipient, email.as_string())
