@@ -4,7 +4,6 @@ import os
 
 from passgen import generate_password
 
-source_user = os.environ["Source User"]
 
 username = os.environ["Username"]
 user_email = os.environ["Email"]
