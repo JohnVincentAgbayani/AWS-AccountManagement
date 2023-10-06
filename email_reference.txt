@@ -1,0 +1,20 @@
+{
+	"deltekdev":{"url":"https://deltekdev.signin.aws.amazon.com/console", "account":"343866166964", "alias":"Deltekdev"},
+	"flexplus":{"url":"https://dcoflexp.signin.aws.amazon.com/console", "account":"363912313913", "alias":"Flexplus"},
+	"costpoint":{"url":"https://dcocostpoint.signin.aws.amazon.com/console", "account":"389812532864", "alias":"Costpoint"},
+	"dco":{"url":"https://dco.signin.aws.amazon.com/console", "account":"463061647317", "alias":"DCO"},
+	"offsec":{"url":"https://361863686483.signin.aws.amazon.com/console", "account":"361863686483", "alias":"Offsec"},
+	"govwinpd":{"url":"https://645778329923.signin.aws.amazon.com/console", "account":"645778329923", "alias":"Govwin"},
+	"govwindv":{"url":"https://656081332388.signin.aws.amazon.com/console", "account":"656081332388", "alias":"Govwin Dev"},
+	"interspec":{"url":"https://361336774414.signin.aws.amazon.com/console", "account":"361336774414", "alias":"Interspec"},
+	"especs":{"url":"https://195464377553.signin.aws.amazon.com/console", "account":"195464377553", "alias":"eSpecs"},
+	"arcom":{"url":"https://765750043360.signin.aws.amazon.com/console", "account":"765750043360", "alias":"Arcom"},
+	"deltekea":{"url":"https://deltekea.signin.aws.amazon.com/console", "account":"891599952938", "alias":"DeltekEA"},
+	"onvia":{"url":"https://838221089058.signin.aws.amazon.com/console", "account":"838221089058", "alias":"Onvia"},
+	"goss":{"url":"https://global-oss.signin.aws.amazon.com/console", "account":"364370348307", "alias":"Global OSS"},
+	"ecmaconomy":{"url":"https://407002302072.signin.aws.amazon.com/console", "account":"407002302072", "alias":"EC Maconomy Sandbox"},
+	"secsandbox":{"url":"https://931000889061.signin.aws.amazon.com/console", "account":"931000889061", "alias":"Security Sandbox"},
+	"delsandbox":{"url":"https://312770088037.signin.aws.amazon.com/console", "account":"312770088037", "alias":"Delivery Sandbox"},
+	"unionpoint":{"url":"https://unionpoint.signin.aws.amazon.com/console", "account":"968610568229", "alias":"Unionpoint"},
+	"servicebroker":{"url":"https://565237589376.signin.aws.amazon.com/console", "account":"565237589376", "alias":"ServiceBroker"}
+}
