@@ -11,7 +11,7 @@ target_environment = env_file.read()
 
 target_user_file = open("temp_user.txt")
 target_user = target_user_file.read()
-for char in test_reset_user:
+for char in target_user:
 	print(char)
 
 emailref_file = open("email_reference.json")
