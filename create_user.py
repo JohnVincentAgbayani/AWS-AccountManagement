@@ -1,8 +1,11 @@
+import smtplib
 import boto3
 import json
 import os
 
+from email.message import EmailMessage
 from passgen import generate_password
+
 
 
 username = os.environ["Username"]
@@ -38,14 +41,28 @@ if user_exists:
 	print(f'ERROR: {username} already exists in {target_environment}, aborting creation')
 else:
 	iam_create_response = iam_client.create_user(UserName=username,Tags=[{'Key': 'email','Value': user_email},{'Key': 'employeeID','Value': employeeid},{'Key': 'snowcase','Value': snow_case}])
-	print(iam_create_response)
+	print(f'\n{iam_create_response}\n')
 
 	iam_profile_response = iam_client.create_login_profile(UserName=username,Password=user_pwd,PasswordResetRequired=True)
-	print(iam_profile_response)
+	print(f'\n{iam_profile_response}\n')
 
 	setup_group = emailref_json[target_environment]['setup']
 	group_add_response = iam_client.add_user_to_group(GroupName=setup_group, UserName=username)
-	print(group_add_response)
+	print(f'\n{group_add_response}\n')
 
 	if iam_create_response and iam_profile_response and group_add_response:
-		print(f'User account {username} has been created in {target_environment} and has been added into {setup_group}')
+		print(f'\nUser account {username} has been created in {target_environment} and has been added into {setup_group}\n')
+
+
+pwd_subject = f'pwrd - {target_environment} AWS'
+message = "<strong>Hello</strong>, <em>world</em>!"
+
+email = EmailMessage()
+email["From"] = "cloudnoreply@deltek.com"
+email["To"] = user_email
+email["Subject"] = pwd_subject
+email.set_content(message, subtype="html")
+
+smtp = smtplib.SMTP_SSL("smtp.gss.mydeltek.local")
+smtp.sendmail(sender, recipient, email.as_string())
+smtp.quit()
