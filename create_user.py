@@ -53,19 +53,30 @@ emailref_json = json.loads(emailref_file.read())
 
 sender_email = "cloudnoreply@deltek.com"
 
-pwd_subject = f'pwrd - {target_environment} AWS'
-
+#welcome sending
 welcome_subject = f'Welcome to Amazon Web Services - {target_environment}'
-welcome_message = f'Hello, <br><br>You now have access to the AWS Management Console for the account ending in {emailref_json[target_environment]["account"]}.  <br><br> ------ <br><b>Sign-in URL:</b> {emailref_json[target_environment]["url"]} <br><b>User name</b>: {username} <br>Your password will be provided separately by your AWS account administrator. <br><br>Please let us know once you have completed setting up MFA for your account so we can assign you to the appropriate groups.<br><br>------<br><br>Stay connected with AWS by creating a profile: https://pages.awscloud.com/IAM-communication-preferences.html <br><br>Sincerely, <br>Infra SRE Team'
+welcome_message = f'Hello, <br><br>You now have access to the AWS Management Console for the account ending in {emailref_json[target_environment]["account"]}.  <br><br> ------ <br><b>Sign-in URL:</b> {emailref_json[target_environment]["url"]} <br><b>User name</b>: {username} <br>Your password will be provided separately by your AWS account administrator. <br><br>Please let us know once you have completed setting up MFA for your account so we can assign you to the appropriate groups.<br>------<br><br>Stay connected with AWS by creating a profile: https://pages.awscloud.com/IAM-communication-preferences.html <br><br>Sincerely, <br>Infra SRE Team'
 
 email = EmailMessage()
 email["From"] = sender_email
 email["To"] = user_email
 email["Subject"] = welcome_subject
+
 email.set_content(welcome_message, subtype="html")
 
 sender = sender_email
 recipient = "johnvincentagbayani@deltek.com"
+
+smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
+smtp.sendmail(sender, recipient, email.as_string())
+
+#pwd sending
+pwd_subject = f'pwrd - {target_environment} AWS'
+pwd_message = user_pwd
+
+email["Subject"] = pwd_subject
+
+email.set_content(pwd_message, subtype="html")
 
 smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
 smtp.sendmail(sender, recipient, email.as_string())
