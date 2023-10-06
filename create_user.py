@@ -61,5 +61,8 @@ email["To"] = "johnvincentagbayani@deltek.com"
 email["Subject"] = "test subject"
 email.set_content(message, subtype="html")
 
+sender = "cloudnoreply@deltek.com"
+recipient = "johnvincentagbayani@deltek.com"
+
 smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
 smtp.sendmail(sender, recipient, email.as_string())
