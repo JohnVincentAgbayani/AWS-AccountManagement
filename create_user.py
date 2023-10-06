@@ -37,7 +37,7 @@ user_exists = check_user_existence(username)
 if user_exists:
 	print(f'ERROR: {username} already exists in {target_environment}, aborting creation')
 else:
-	iam_create_response = iam_client.create_user(UserName=username,Tags=[{'Key': 'email','Value': target_email},{'Key': 'employeeID','Value': employeeid},{'Key': 'snowcase','Value': snow_case}])
+	iam_create_response = iam_client.create_user(UserName=username,Tags=[{'Key': 'email','Value': user_emai},{'Key': 'employeeID','Value': employeeid},{'Key': 'snowcase','Value': snow_case}])
 	print(iam_create_response)
 
 	iam_profile_response = iam_client.create_login_profile(UserName=username,Password=user_pwd,PasswordResetRequired=True)
