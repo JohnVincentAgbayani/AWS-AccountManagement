@@ -7,7 +7,7 @@ from passgen import generate_password
 
 username = os.environ["Username"]
 user_email = os.environ["Email"]
-employeid = os.environ["Employee ID"]
+employeeid = os.environ["Employee ID"]
 snow_case = os.environ["ServiceNow Case"]
 user_pwd = generate_password()
 
