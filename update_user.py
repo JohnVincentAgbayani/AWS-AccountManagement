@@ -27,6 +27,7 @@ def check_user_existence(username):
 	try:
 		response = iam_client.get_user(UserName=username)
 	except Exception as e:
+		print(e)
 		if "cannot be found" in str(e) or "invalid" in str(e):
 			print(f'\n\nINVALID USERNAME: {username}\n\n')
 			exit(1)
