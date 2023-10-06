@@ -18,8 +18,7 @@ target_user = target_user.replace("\n","")
 emailref_file = open("email_reference.json")
 emailref_json = json.loads(emailref_file.read())
 
-
-groups = "AWSAdministrator\nDCO_AWSAcct_Standard_Users\nDCO_IAM_DefaultPolicy\nIAM_IdleAccount_Exception" # from jenkins parameters
+setup_removal = os.environ["Setup Group Removal"]
 
 
 #helper functions
@@ -66,6 +65,7 @@ iam_client = boto3.client('iam')
 
 check_user_existence(target_user)
 mfa_check = check_mfa_existence(target_user)
+
 if mfa_check:
 
 	if update_method == "replicate":
@@ -81,17 +81,19 @@ if mfa_check:
 				print(f'{target_user} has been added to {group["GroupName"]}\n')
 				
 	elif update_method == "custom":
-
+		groups_list = os.environ["Groups"]
 		groups_list = groups.split("\n")
+
 		for group in groups_list:
 			check_group_existence(group)
 			group_add_response = iam_client.add_user_to_group(GroupName=group,UserName=target_user)
 			print(f'\n{group_add_response}\n')
 			print(f'{target_user} has been added to {group}\n')
 
-	setup_group = emailref_json[target_environment]['setup']
-	setup_removal_response = iam_client.remove_user_from_group(GroupName=setup_group,UserName=target_user)
-	print(f'{target_user} has been removed from {setup_group}\n')
+	if "Yes" in setup_removal:
+		setup_group = emailref_json[target_environment]['setup']
+		setup_removal_response = iam_client.remove_user_from_group(GroupName=setup_group,UserName=target_user)
+		print(f'{target_user} has been removed from {setup_group}\n')
 
 else:
 	print(f'ERROR: User {target_user} does not have MFA configured, permission update will not proceed')
