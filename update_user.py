@@ -81,7 +81,7 @@ if mfa_check:
 				print(f'{target_user} has been added to {group["GroupName"]}\n')
 				
 	elif update_method == "custom":
-		groups_list = os.environ["Groups"]
+		groups = os.environ["Groups"]
 		groups_list = groups.split("\n")
 
 		for group in groups_list:
