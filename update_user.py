@@ -5,6 +5,7 @@ import os
 #initializing params
 method_file = open("temp_method.txt")
 update_method = method_file.read()
+update_method = update_method.replace("\n","").strip()
 
 env_file = open("temp_env.txt")
 target_environment = env_file.read()
