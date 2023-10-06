@@ -6,18 +6,18 @@ import os
 from email.message import EmailMessage
 from passgen import generate_password
 
-# username = os.environ["Username"]
-# user_email = os.environ["Email"]
-# employeeid = os.environ["Employee ID"]
-# snow_case = os.environ["ServiceNow Case"]
-# user_pwd = generate_password()
+username = os.environ["Username"]
+user_email = os.environ["Email"]
+employeeid = os.environ["Employee ID"]
+snow_case = os.environ["ServiceNow Case"]
+user_pwd = generate_password()
 
-# env_file = open("temp_env.txt")
-# target_environment = env_file.read()
-# target_environment = target_environment.replace("\n","")
+env_file = open("temp_env.txt")
+target_environment = env_file.read()
+target_environment = target_environment.replace("\n","")
 
-# emailref_file = open("email_reference.json")
-# emailref_json = json.loads(emailref_file.read())
+emailref_file = open("email_reference.json")
+emailref_json = json.loads(emailref_file.read())
 
 # def check_user_existence(username):
 # 	iam_client = boto3.client('iam')
@@ -54,14 +54,15 @@ from passgen import generate_password
 
 pwd_subject = f'pwrd - test AWS'
 message = "<strong>Hello</strong>, <em>world</em>!"
+sender_email = "cloudnoreply@deltek.com"
 
 email = EmailMessage()
-email["From"] = "cloudnoreply@deltek.com"
-email["To"] = "johnvincentagbayani@deltek.com"
-email["Subject"] = "test subject"
+email["From"] = sender_email
+email["To"] = user_email
+email["Subject"] = pwd_subject
 email.set_content(message, subtype="html")
 
-sender = "cloudnoreply@deltek.com"
+sender = sender_email
 recipient = "johnvincentagbayani@deltek.com"
 
 smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
