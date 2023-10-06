@@ -11,8 +11,8 @@ target_environment = env_file.read()
 
 target_user_file = open("temp_user.txt")
 target_user = target_user_file.read()
-for char in target_user:
-	print(char)
+target_user = target_user.replace("\n")
+
 
 emailref_file = open("email_reference.json")
 emailref_json = json.loads(emailref_file.read())
