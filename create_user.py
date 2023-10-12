@@ -64,6 +64,9 @@ else:
 		email["Subject"] = welcome_subject
 		email.set_content(welcome_message, subtype="html")
 
+		with open("mfa.pdf", "rb") as pdf_file:
+		    email.add_attachment(pdf_file.read(), filename="mfa.pdf", maintype="application", subtype="pdf")
+
 		sender = sender_email
 		recipient = user_email
 
