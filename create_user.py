@@ -56,7 +56,7 @@ else:
 
 		#welcome sending
 		welcome_subject = f'Welcome to Amazon Web Services - {target_environment}'
-		welcome_message = f'Hello, <br><br>You now have access to the AWS Management Console for the account ending in {emailref_json[target_environment]["account"][-4:]}.  <br><br> ------ <br><b>Sign-in URL:</b> {emailref_json[target_environment]["url"]} <br><b>User name</b>: {username} <br>Your password will be provided separately by your AWS account administrator. <br><br>Please let us know once you have completed setting up MFA for your account so we can assign you to the appropriate groups.<br>------<br><br>Stay connected with AWS by creating a profile: https://pages.awscloud.com/IAM-communication-preferences.html <br><br>Sincerely, <br>Infra SRE Team'
+		welcome_message = f'Hello, <br><br>You now have access to the AWS Management Console for the account ending in {emailref_json[target_environment]["account"][-4:]}.  <br><br> ------ <br><b>Sign-in URL:</b> {emailref_json[target_environment]["url"]} <br><b>User name</b>: {username} <br><br>Your password will be provided separately by your AWS account administrator. <br><br>Please let us know once you have completed setting up MFA for your account so we can assign you to the appropriate groups.<br>------<br><br>Stay connected with AWS by creating a profile: https://pages.awscloud.com/IAM-communication-preferences.html <br><br>Sincerely, <br>Infra SRE Team'
 
 		email = EmailMessage()
 		email["From"] = sender_email
