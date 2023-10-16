@@ -1,3 +1,4 @@
+import smtplib
 import base64
 import boto3
 import json
