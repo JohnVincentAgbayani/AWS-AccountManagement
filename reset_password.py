@@ -39,6 +39,7 @@ if response:
 	if target_email:
 		pwd = generate_password()
 		response = iam_client.update_login_profile(UserName=target_user,Password=pwd,PasswordResetRequired=True)
+		print(f'\nPassword for user account {target_user} in {target_env} has been reset and an email containing a temporary password has been sent\n')
 
 		pwd_subject = f'pwrd - {target_environment} AWS'
 		pwd_message = pwd
@@ -53,5 +54,3 @@ if response:
 		smtp.sendmail("cloudnoreply@deltek.com", target_email, email.as_string())
 	else:
 		print(f'\nERROR: User account {target_user} does not have an email tag or has an incorrectly formatted email tag\n')
-
-return [pwd, target_email]
