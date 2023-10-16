@@ -62,6 +62,7 @@ else:
 		email["From"] = sender_email
 		email["To"] = user_email
 		email["Subject"] = welcome_subject
+		email["CC"] = "cloudinfrasre@deltek.com"
 		email.set_content(welcome_message, subtype="html")
 
 		with open("MFAEnrollment-AWS.pdf", "rb") as pdf_file:
