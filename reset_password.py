@@ -41,7 +41,7 @@ if response:
 		response = iam_client.update_login_profile(UserName=target_user,Password=pwd,PasswordResetRequired=True)
 		print(f'\nPassword for user account {target_user} in {target_env} has been reset and an email containing a temporary password has been sent\n')
 
-		pwd_subject = f'pwrd - {target_environment} AWS'
+		pwd_subject = f'pwrd - {target_env} AWS'
 		pwd_message = pwd
 
 		email = EmailMessage()
