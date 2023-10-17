@@ -8,7 +8,7 @@
 	"GovwinDev":{"url":"https://656081332388.signin.aws.amazon.com/console", "account":"656081332388", "setup":"DCO_MFA_Setup", "alias":"Govwin Dev"},
 	"Interspec":{"url":"https://361336774414.signin.aws.amazon.com/console", "account":"361336774414", "setup":"IAM_Setup", "alias":"Interspec"},
 	"Especs":{"url":"https://195464377553.signin.aws.amazon.com/console", "account":"195464377553", "setup":"IAMSetup", "alias":"eSpecs"},
-	"Arcom":{"url":"https://765750043360.signin.aws.amazon.com/console", "account":"765750043360", "setup":"IAM_Setup", "alias":"Arcom"},
+	"Arcom":{"url":"https://765750043360.signin.aws.amazon.com/console", "account":"765750043360", "setup":"IAMSetup", "alias":"Arcom"},
 	"DeltekEA":{"url":"https://deltekea.signin.aws.amazon.com/console", "account":"891599952938", "setup":"IAM_Setup", "alias":"DeltekEA"},
 	"Onvia":{"url":"https://838221089058.signin.aws.amazon.com/console", "account":"838221089058", "setup":"IAM_Setup", "alias":"Onvia"},
 	"GlobalOSS":{"url":"https://global-oss.signin.aws.amazon.com/console", "account":"364370348307", "setup":"DCO_MFA_Setup", "alias":"Global OSS"},
