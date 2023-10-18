@@ -69,7 +69,7 @@ else:
 		    email.add_attachment(pdf_file.read(), filename="MFAEnrollment-AWS.pdf", maintype="application", subtype="pdf")
 
 		sender = sender_email
-		recipient = user_email
+		recipient = [user_email, "cloudinfrasre@deltek.com"]
 
 		smtp = smtplib.SMTP("smtp.gss.mydeltek.local")
 		smtp.sendmail(sender, recipient, email.as_string())
