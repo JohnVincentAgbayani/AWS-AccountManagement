@@ -16,5 +16,13 @@
 	"SecuritySandbox":{"url":"https://931000889061.signin.aws.amazon.com/console", "account":"931000889061", "setup":"DCO_MFA_Setup", "alias":"Security Sandbox"},
 	"DeliverySandbox":{"url":"https://312770088037.signin.aws.amazon.com/console", "account":"312770088037", "setup":"DCO_MFA_Setup", "alias":"Delivery Sandbox"},
 	"Unionpoint":{"url":"https://unionpoint.signin.aws.amazon.com/console", "account":"968610568229", "setup":"DCO_MFA_Setup", "alias":"Unionpoint"},
-	"ServiceBroker":{"url":"https://565237589376.signin.aws.amazon.com/console", "account":"565237589376", "setup":"DCO_MFA_Setup", "alias":"ServiceBroker"}
+	"ServiceBroker":{"url":"https://565237589376.signin.aws.amazon.com/console", "account":"565237589376", "setup":"DCO_MFA_Setup", "alias":"ServiceBroker"},
+	"Archsandbox":{"url":"https://028306514199.signin.aws.amazon.com/console", "account":"028306514199", "setup":"DCO_MFA_Setup", "alias":"Archsandbox"},
+	"SC-Vantagepoint":{"url":"https://174562703534.signin.aws.amazon.com/console", "account":"174562703534", "setup":"DCO_MFA_Setup", "alias":"SC-Vantagepoint"},
+	"EC-MGT":{"url":"https://016831870034.signin.aws.amazon.com/console", "account":"016831870034", "setup":"DCO_MFA_Setup", "alias":"EC-MGT"},
+	"PieterEerlings":{"url":"https://534119836598.signin.aws.amazon.com/console", "account":"534119836598", "setup":"DCO_MFA_Setup", "alias":"Pieter Eerlings"},
+	"SC-DSB":{"url":"https://565237589376.signin.aws.amazon.com/console", "account":"565237589376", "setup":"DCO_MFA_Setup", "alias":"SC-DSB"},
+	"sc-dhtmlx":{"url":"https://320987375699.signin.aws.amazon.com/console", "account":"320987375699", "setup":"DGC_MFA_Setup", "alias":"DHTMLX"},
+	"sc-ssec":{"url":"https://620177452282.signin.aws.amazon.com/console", "account":"620177452282", "setup":"DGC_MFA_Setup", "alias":"sc-ssec"},
+	"ec-ssec":{"url":"https://535726127367.signin.aws.amazon.com/console", "account":"535726127367", "setup":"DGC_MFA_Setup", "alias":"ec-ssec"}
 }
