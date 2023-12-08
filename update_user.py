@@ -89,8 +89,8 @@ if mfa_check:
 				print(f'{target_user} has been added to {group["GroupName"]}\n')
 		else:
 			with open("source_user_errors.txt", 'a') as suser_error:
-			    append_message = f'{source_user} does not exist in {target_environment}'
-	    		suser_error.write(append_message)
+				append_message = f'{source_user} does not exist in {target_environment}'
+				suser_error.write(append_message)
 			print(f'INVALID USERNAME: {source_user} - SKIPPING {target_environment}')
 				
 	elif update_method == "custom":
