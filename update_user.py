@@ -20,14 +20,6 @@ emailref_json = json.loads(emailref_file.read())
 
 setup_removal = os.environ["Setup Group Removal"]
 
-#initialize user existence error logs
-with open("source_user_errors.txt", 'w') as f:
-    f.write('')
-
-with open("target_user_errors.txt", 'w') as f:
-    f.write('')
-
-
 
 #helper functions
 def check_user_existence(username):
