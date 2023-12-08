@@ -67,7 +67,7 @@ target_user_check = check_user_existence(target_user)
 if not target_user_check:
 	with open("target_user_errors.txt", 'a') as tuser_error:
 		append_message = f'{target_user} does not exist in {target_environment}'
-	    tuser_error.write(append_message)
+		tuser_error.write(append_message)
 	print(f'INVALID USERNAME: {target_user} - SKIPPING {target_environment}')
 	exit(0)
 
