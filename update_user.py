@@ -29,9 +29,8 @@ def check_user_existence(username):
 	try:
 		response = iam_client.get_user(UserName=username)
 	except Exception as e:
-		print(e)
 		if "cannot be found" in str(e) or "invalid" in str(e):
-			print(f'\n\nINVALID USERNAME: {username}\n\n')
+			response = ""
 
 	return response
 
@@ -68,7 +67,7 @@ if not target_user_check:
 	with open("target_user_errors.txt", 'a') as tuser_error:
 		append_message = f'{target_user} does not exist in {target_environment}'
 		tuser_error.write(append_message)
-	print(f'INVALID USERNAME: {target_user} - SKIPPING {target_environment}')
+	print(f'INVALID TARGET USER: {target_user} - SKIPPING {target_environment}')
 	exit(0)
 
 
@@ -89,9 +88,9 @@ if mfa_check:
 				print(f'{target_user} has been added to {group["GroupName"]}\n')
 		else:
 			with open("source_user_errors.txt", 'a') as suser_error:
-				append_message = f'{source_user} does not exist in {target_environment}'
+				append_message = f'{source_user} does not exist in {target_environment}\n'
 				suser_error.write(append_message)
-			print(f'INVALID USERNAME: {source_user} - SKIPPING {target_environment}')
+			print(f'INVALID SOURCE USER: {source_user} - SKIPPING {target_environment}')
 				
 	elif update_method == "custom":
 		groups = os.environ["Groups"]
