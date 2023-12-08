@@ -20,6 +20,14 @@ emailref_json = json.loads(emailref_file.read())
 
 setup_removal = os.environ["Setup Group Removal"]
 
+#initialize user existence error logs
+with open("source_user_errors.txt", 'w') as f:
+    f.write('')
+
+with open("target_user_errors.txt", 'w') as f:
+    f.write('')
+
+
 
 #helper functions
 def check_user_existence(username):
@@ -65,7 +73,7 @@ target_user_check = check_user_existence(target_user)
 
 if not target_user_check:
 	with open("target_user_errors.txt", 'a') as tuser_error:
-		append_message = f'{target_user} does not exist in {target_environment}'
+		append_message = f'{target_user} does not exist in {target_environment}\n'
 		tuser_error.write(append_message)
 	print(f'INVALID TARGET USER: {target_user} - SKIPPING {target_environment}')
 	exit(0)
