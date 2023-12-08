@@ -67,7 +67,7 @@ if not target_user_check:
 	with open("target_user_errors.txt", 'a') as tuser_error:
 		append_message = f'{target_user} does not exist in {target_environment}\n'
 		tuser_error.write(append_message)
-	print(f'INVALID TARGET USER: {target_user} - SKIPPING {target_environment}')
+	print(f'\n========================\nINVALID TARGET USER: {target_user} - SKIPPING {target_environment}\n========================\n')
 	exit(0)
 
 
@@ -90,7 +90,7 @@ if mfa_check:
 			with open("source_user_errors.txt", 'a') as suser_error:
 				append_message = f'{source_user} does not exist in {target_environment}\n'
 				suser_error.write(append_message)
-			print(f'INVALID SOURCE USER: {source_user} - SKIPPING {target_environment}')
+			print(f'\n========================\nINVALID SOURCE USER: {source_user} - SKIPPING {target_environment}\n========================\n')
 				
 	elif update_method == "custom":
 		groups = os.environ["Groups"]
