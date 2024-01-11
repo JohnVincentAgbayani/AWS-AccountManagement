@@ -17,6 +17,11 @@ def generate_password():
 	while has_upper+has_lower+has_number+has_special<4:
 
 		pwd = ''
+		has_upper = 0
+		has_lower = 0
+		has_number = 0
+		has_special = 0
+
 		for char in range(16):
 			char = secrets.choice(alphabet)
 			pwd += char
